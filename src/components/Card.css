@@ -1,0 +1,87 @@
+.card1 {
+    border-radius: 20px;
+  }
+  .ant-card-body {
+    padding: 9px !important;
+  }
+  .cardImg {
+    margin: 5px 5px;
+    width: 40px;
+    height: 40px;
+    background-color: #d1dcf4;
+    border-radius: 5px;
+  }
+  
+  .cardTitile {
+    color: #002f68;
+    font-weight: 700;
+    font-style: bold;
+  }
+  .cardPara {
+    font-weight: 400;
+    font-size: 12px;
+    color: #5c83b1;
+  }
+  .cardSpan {
+    font-size: 14px;
+    color: #5c83b1;
+    font-weight: 400;
+  }
+  .gutter-box {
+    padding: 8px 0;
+    background: #00a0e9;
+  }
+
+
+
+  .btn4 {   
+ font-family: 'Montserrat';
+font-style: normal;
+text-align: center;
+color: white; 
+background-color: #2B78D4; 
+border-radius: 8px;
+width: 120px;
+position: relative;
+
+bottom: -0.75rem;
+/* bottom: -11rem; */
+
+}
+.btn1 {
+font-weight: 600;
+font-size: 18px;
+line-height: 22px;
+padding: 15px;
+
+}
+ .btn2 
+ {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 22px;
+    text-align: center;
+    float: right;
+    bottom: 0px;
+    margin-top:100px;
+   
+    width: 100px; 
+    /* padding: 10px;  */
+   
+
+ }
+ .bright {
+    /* position: absolute; */ 
+   
+    /* right:20px;  */
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    
+    padding: 15px;  
+    float: right;
+    bottom: 0px;
+    /* margin-top:100px;  */
+
+ }
+ 

@@ -1,0 +1,138 @@
+const data = [
+    
+        {  
+            htext:"This workflow is to enable an employee raise his leave request and get it approved it from him reporting manager",
+            view:"View Detaills",
+            image: "shapes/mid/Ellipse 2.png",
+            id : 1,
+            title: "MANIKANDAN J N",
+            description: "Software Developer Intern",
+            content: "Software Developer Intern in Fibonalobas 1"
+         },
+         {  htext:"This workflow is to enable an employee raise his leave request and get it approved it from him reporting manager",
+            image: "shapes/mid/Ellipse 2.png",
+            view:"View Detaills",
+            id:2,
+             title: "KAMESHWARAN",
+             description: "Software Developer Intern",
+             content: "Software Developer Intern in Fibonalobas 2"
+         },
+         {  htext:"This workflow is to enable an employee raise his leave request and get it approved it from him reporting manager",
+            image: "shapes/mid/Ellipse 2.png",
+            view:"View Detaills",
+            id:3,
+             title: "MAHALAKSHMI",
+             description: "Software Developer Intern",
+             content: "Software Developer Intern in Fibonalobas 3"
+         },
+         {  htext:"This workflow is to enable an employee raise his leave request and get it approved it from him reporting manager",
+         image: "shapes/mid/Ellipse 2.png",
+         view:"View Detaills",
+          id:4,
+          title: "CHRISTOPHER",
+          description: "Software Developer Intern",
+          content: "Software Developer Intern in Fibonalobas 4"
+      },
+      {  htext:"This workflow is to enable an employee raise his leave request and get it approved it from him reporting manager",
+            image: "shapes/mid/Ellipse 2.png",
+            view:"View Detaills",
+             id:5,
+             title: "ARUNKUMAR",
+             description: "Software Developer Intern",
+             content: "Software Developer Intern in Fibonalobas 5"
+         },
+         {  
+            htext:"This workflow is to enable an employee raise his leave request and get it approved it from him reporting manager",
+            view:"View Detaills",
+            image: "shapes/mid/Ellipse 2.png",
+            id : 1,
+            title: "MANIKANDAN J N",
+            description: "Software Developer Intern",
+            content: "Software Developer Intern in Fibonalobas 1"
+         },
+         {  htext:"This workflow is to enable an employee raise his leave request and get it approved it from him reporting manager",
+            image: "shapes/mid/Ellipse 2.png",
+            view:"View Detaills",
+            id:2,
+             title: "KAMESHWARAN",
+             description: "Software Developer Intern",
+             content: "Software Developer Intern in Fibonalobas 2"
+         },
+         {  htext:"This workflow is to enable an employee raise his leave request and get it approved it from him reporting manager",
+            image: "shapes/mid/Ellipse 2.png",
+            view:"View Detaills",
+            id:3,
+             title: "MAHALAKSHMI",
+             description: "Software Developer Intern",
+             content: "Software Developer Intern in Fibonalobas 3"
+         },
+         {  htext:"This workflow is to enable an employee raise his leave request and get it approved it from him reporting manager",
+         image: "shapes/mid/Ellipse 2.png",
+         view:"View Detaills",
+         id:4,
+          title: "CHRISTOPHER",
+          description: "Software Developer Intern",
+          content: "Software Developer Intern in Fibonalobas 4"
+      },
+      {  htext:"This workflow is to enable an employee raise his leave request and get it approved it from him reporting manager",
+            image: "shapes/mid/Ellipse 2.png",
+            view:"View Detaills",
+            id:5,
+             title: "ARUNKUMAR",
+             description: "Software Developer Intern",
+             content: "Software Developer Intern in Fibonalobas 5"
+         },
+         {  
+            htext:"This workflow is to enable an employee raise his leave request and get it approved it from him reporting manager",
+            view:"View Detaills",
+            image: "shapes/mid/Ellipse 2.png",
+            id : 1,
+            title: "MANIKANDAN J N",
+            description: "Software Developer Intern",
+            content: "Software Developer Intern in Fibonalobas 1"
+         },
+         {  htext:"This workflow is to enable an employee raise his leave request and get it approved it from him reporting manager",
+            image: "shapes/mid/Ellipse 2.png",
+            view:"View Detaills",
+            id:2,
+             title: "KAMESHWARAN",
+             description: "Software Developer Intern",
+             content: "Software Developer Intern in Fibonalobas 2"
+         },
+         {  htext:"This workflow is to enable an employee raise his leave request and get it approved it from him reporting manager",
+            image: "shapes/mid/Ellipse 2.png",
+            view:"View Detaills",
+            id:3,
+             title: "MAHALAKSHMI",
+             description: "Software Developer Intern",
+             content: "Software Developer Intern in Fibonalobas 3"
+         },
+         {  htext:"This workflow is to enable an employee raise his leave request and get it approved it from him reporting manager",
+         image: "shapes/mid/Ellipse 2.png",
+         view:"View Detaills",
+         id:4,
+          title: "CHRISTOPHER",
+          description: "Software Developer Intern",
+          content: "Software Developer Intern in Fibonalobas 4"
+      },
+      {  htext:"This workflow is to enable an employee raise his leave request and get it approved it from him reporting manager",
+            image: "shapes/mid/Ellipse 2.png",
+            view:"View Detaills",
+            id:5,
+             title: "ARUNKUMAR",
+             description: "Software Developer Intern",
+             content: "Software Developer Intern in Fibonalobas 5"
+         },
+         {  htext:"This workflow is to enable an employee raise his leave request and get it approved it from him reporting manager",
+            image: "shapes/mid/Ellipse 2.png",
+            view:"View Detaills",
+            id:5,
+             title: "ARUNKUMAR",
+             description: "Software Developer Intern",
+             content: "Software Developer Intern in Fibonalobas 5"
+         },
+         
+   
+    ];
+    export default data;
+    
