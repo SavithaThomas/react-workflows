@@ -1,138 +1,114 @@
 const data = [
     
-        {  
-            htext:"This workflow is to enable an employee raise his leave request and get it approved it from him reporting manager",
-            view:"View Detaills",
-            image: "shapes/mid/Ellipse 2.png",
-            id : 1,
-            title: "MANIKANDAN J N",
-            description: "Software Developer Intern",
-            content: "Software Developer Intern in Fibonalobas 1"
-         },
-         {  htext:"This workflow is to enable an employee raise his leave request and get it approved it from him reporting manager",
-            image: "shapes/mid/Ellipse 2.png",
-            view:"View Detaills",
-            id:2,
-             title: "KAMESHWARAN",
-             description: "Software Developer Intern",
-             content: "Software Developer Intern in Fibonalobas 2"
-         },
-         {  htext:"This workflow is to enable an employee raise his leave request and get it approved it from him reporting manager",
-            image: "shapes/mid/Ellipse 2.png",
-            view:"View Detaills",
-            id:3,
-             title: "MAHALAKSHMI",
-             description: "Software Developer Intern",
-             content: "Software Developer Intern in Fibonalobas 3"
-         },
-         {  htext:"This workflow is to enable an employee raise his leave request and get it approved it from him reporting manager",
-         image: "shapes/mid/Ellipse 2.png",
-         view:"View Detaills",
-          id:4,
-          title: "CHRISTOPHER",
-          description: "Software Developer Intern",
-          content: "Software Developer Intern in Fibonalobas 4"
+        
+         {e_id: "1",
+         image: "shapes/Group 42.png",
+         title: "GRN approval",
+         description: "WF_PO_PROCESSING_STD2",
+         content: "Leave application for admin approval",
+         details:
+           "This workflow is to enable an empoyee raise his leave request and get it approved it from his reporting manager.",
+       },
+       {
+        e_id: "2",
+        image: "../shapes/Group 43.png",
+        title: "ASN approval",
+        description: "WF_PO_PROCESSING_STD2",
+        content: "Leave application for admin approval",
+        details:
+          "This workflow is to enable an empoyee raise his leave request and get it approved it from his reporting manager.",
       },
-      {  htext:"This workflow is to enable an employee raise his leave request and get it approved it from him reporting manager",
-            image: "shapes/mid/Ellipse 2.png",
-            view:"View Detaills",
-             id:5,
-             title: "ARUNKUMAR",
-             description: "Software Developer Intern",
-             content: "Software Developer Intern in Fibonalobas 5"
-         },
-         {  
-            htext:"This workflow is to enable an employee raise his leave request and get it approved it from him reporting manager",
-            view:"View Detaills",
-            image: "shapes/mid/Ellipse 2.png",
-            id : 1,
-            title: "MANIKANDAN J N",
-            description: "Software Developer Intern",
-            content: "Software Developer Intern in Fibonalobas 1"
-         },
-         {  htext:"This workflow is to enable an employee raise his leave request and get it approved it from him reporting manager",
-            image: "shapes/mid/Ellipse 2.png",
-            view:"View Detaills",
-            id:2,
-             title: "KAMESHWARAN",
-             description: "Software Developer Intern",
-             content: "Software Developer Intern in Fibonalobas 2"
-         },
-         {  htext:"This workflow is to enable an employee raise his leave request and get it approved it from him reporting manager",
-            image: "shapes/mid/Ellipse 2.png",
-            view:"View Detaills",
-            id:3,
-             title: "MAHALAKSHMI",
-             description: "Software Developer Intern",
-             content: "Software Developer Intern in Fibonalobas 3"
-         },
-         {  htext:"This workflow is to enable an employee raise his leave request and get it approved it from him reporting manager",
-         image: "shapes/mid/Ellipse 2.png",
-         view:"View Detaills",
-         id:4,
-          title: "CHRISTOPHER",
-          description: "Software Developer Intern",
-          content: "Software Developer Intern in Fibonalobas 4"
+      {
+        e_id: "4",
+        image: "./shapes/Group 41.png",
+        title: "Purchase",
+        description: "WF_PO_PROCESSING_STD2",
+        content: "Leave application for admin approval",
+        details:
+          "This workflow is to enable an empoyee raise his leave request and get it approved it from his reporting manager.",
       },
-      {  htext:"This workflow is to enable an employee raise his leave request and get it approved it from him reporting manager",
-            image: "shapes/mid/Ellipse 2.png",
-            view:"View Detaills",
-            id:5,
-             title: "ARUNKUMAR",
-             description: "Software Developer Intern",
-             content: "Software Developer Intern in Fibonalobas 5"
-         },
-         {  
-            htext:"This workflow is to enable an employee raise his leave request and get it approved it from him reporting manager",
-            view:"View Detaills",
-            image: "shapes/mid/Ellipse 2.png",
-            id : 1,
-            title: "MANIKANDAN J N",
-            description: "Software Developer Intern",
-            content: "Software Developer Intern in Fibonalobas 1"
-         },
-         {  htext:"This workflow is to enable an employee raise his leave request and get it approved it from him reporting manager",
-            image: "shapes/mid/Ellipse 2.png",
-            view:"View Detaills",
-            id:2,
-             title: "KAMESHWARAN",
-             description: "Software Developer Intern",
-             content: "Software Developer Intern in Fibonalobas 2"
-         },
-         {  htext:"This workflow is to enable an employee raise his leave request and get it approved it from him reporting manager",
-            image: "shapes/mid/Ellipse 2.png",
-            view:"View Detaills",
-            id:3,
-             title: "MAHALAKSHMI",
-             description: "Software Developer Intern",
-             content: "Software Developer Intern in Fibonalobas 3"
-         },
-         {  htext:"This workflow is to enable an employee raise his leave request and get it approved it from him reporting manager",
-         image: "shapes/mid/Ellipse 2.png",
-         view:"View Detaills",
-         id:4,
-          title: "CHRISTOPHER",
-          description: "Software Developer Intern",
-          content: "Software Developer Intern in Fibonalobas 4"
-      },
-      {  htext:"This workflow is to enable an employee raise his leave request and get it approved it from him reporting manager",
-            image: "shapes/mid/Ellipse 2.png",
-            view:"View Detaills",
-            id:5,
-             title: "ARUNKUMAR",
-             description: "Software Developer Intern",
-             content: "Software Developer Intern in Fibonalobas 5"
-         },
-         {  htext:"This workflow is to enable an employee raise his leave request and get it approved it from him reporting manager",
-            image: "shapes/mid/Ellipse 2.png",
-            view:"View Detaills",
-            id:5,
-             title: "ARUNKUMAR",
-             description: "Software Developer Intern",
-             content: "Software Developer Intern in Fibonalobas 5"
-         },
-         
+      {e_id: "1",
+      image: "../shapes/Group 42.png",
+      title: "GRN approval",
+      description: "WF_PO_PROCESSING_STD2",
+      content: "Leave application for admin approval",
+      details:
+        "This workflow is to enable an empoyee raise his leave request and get it approved it from his reporting manager.",
+    },
+    {
+     e_id: "2",
+     image: "../shapes/Group 43.png",
+     title: "ASN approval",
+     description: "WF_PO_PROCESSING_STD2",
+     content: "Leave application for admin approval",
+     details:
+       "This workflow is to enable an empoyee raise his leave request and get it approved it from his reporting manager.",
+   },
+   {
+     e_id: "4",
+     image: "./shapes/Group 41.png",
+     title: "Purchase",
+     description: "WF_PO_PROCESSING_STD2",
+     content: "Leave application for admin approval",
+     details:
+       "This workflow is to enable an empoyee raise his leave request and get it approved it from his reporting manager.",
+   },
    
+   {e_id: "1",
+   image: "shapes/Group 42.png",
+   title: "GRN approval",
+   description: "WF_PO_PROCESSING_STD2",
+   content: "Leave application for admin approval",
+   details:
+     "This workflow is to enable an empoyee raise his leave request and get it approved it from his reporting manager.",
+ },
+ {
+  e_id: "2",
+  image: "../shapes/Group 43.png",
+  title: "ASN approval",
+  description: "WF_PO_PROCESSING_STD2",
+  content: "Leave application for admin approval",
+  details:
+    "This workflow is to enable an empoyee raise his leave request and get it approved it from his reporting manager.",
+},
+{
+  e_id: "4",
+  image: "./shapes/Group 41.png",
+  title: "Purchase",
+  description: "WF_PO_PROCESSING_STD2",
+  content: "Leave application for admin approval",
+  details:
+    "This workflow is to enable an empoyee raise his leave request and get it approved it from his reporting manager.",
+},
+{e_id: "1",
+image: "../shapes/Group 42.png",
+title: "GRN approval",
+description: "WF_PO_PROCESSING_STD2",
+content: "Leave application for admin approval",
+details:
+  "This workflow is to enable an empoyee raise his leave request and get it approved it from his reporting manager.",
+},
+{
+e_id: "2",
+image: "../shapes/Group 43.png",
+title: "ASN approval",
+description: "WF_PO_PROCESSING_STD2",
+content: "Leave application for admin approval",
+details:
+ "This workflow is to enable an empoyee raise his leave request and get it approved it from his reporting manager.",
+},
+{
+e_id: "4",
+image: "./shapes/Group 41.png",
+title: "Purchase",
+description: "WF_PO_PROCESSING_STD2",
+content: "Leave application for admin approval",
+details:
+ "This workflow is to enable an empoyee raise his leave request and get it approved it from his reporting manager.",
+},
+
     ];
+
+    
     export default data;
     

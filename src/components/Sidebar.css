@@ -10,13 +10,13 @@
   min-width: 50px !important;
   width: 200px !important;
 }
-.sideb {
+.SideBar {
   
-    display:flex;
-    height:100vh;    
-    flex-direction: column;
-    justify-content: space-between;
-    background : #FFFFFF;
+    display:flex!important;
+    height:100vh!important;    
+    flex-direction: column !important;
+    justify-content: space-between!important;
+    background : #FFFFFF!important;
    
 }
 .Logo img {
@@ -24,7 +24,7 @@
   height: 70px;
 }
 .midicon {
-  margin-top: 160px; 
+  margin-top: 130px;   
 }
 .midicon img {
   width: 40px;
@@ -42,10 +42,10 @@
 .boticon {
   width: 50px;
   height: 50px;
-  margin: 140px 15px; 
+   margin: 120px 15px;   
 }
 .boticon img {
-   margin-top: 20px; 
+   margin-top: 20px;  
 }
 .ant-input-affix-wrapper {
   border-radius: 9px;
@@ -77,7 +77,7 @@ color: white;
 background-color: #2B78D4; 
 border-radius: 8px;
  position: absolute;
-  right: -8.5rem;
+  right: -6.5rem;
 }
 .midhead {
   margin-top: 10px;

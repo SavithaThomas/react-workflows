@@ -5,14 +5,15 @@ import { useState } from 'react';
 import { Layout,Menu} from "antd";
 import { Input, Button} from "antd";
 
-import img8 from "../shapes/img8.png";
-import { AnyPtrRecord } from 'dns';
+
+import img2 from "../shapes/img2.svg";
+// import { AnyPtrRecord } from 'dns';
 const { Content } = Layout;
 
 function Cardcomp(props:any) {
 
   const [isActive, setIsActive] = useState(true);
-  const [isMouse, setIsMouse] = useState(false);
+  // const [isMouse, setIsMouse] = useState(false);
  
   const handleClickcard = () => {  
     setIsActive(isActive => !isActive);   
@@ -25,10 +26,10 @@ return (
   <Col className="gutter-row" span={6}>
   {isActive && 
     <div className="site-card-border-less-wrapper" onMouseEnter={handleClickcard}  onClick={handleClickcard} >
-      <Card style={{ width: 320, height: 140 }} className="card1">
+      <Card style={{ width: 300, height: 160 }} className="card1">
         <Row>
           <Col span={6}>
-            <img src={img8} className="cardImg" alt=" " />
+            <img src={img2} className="cardImg" alt=" " />
           </Col>
           <Col span={18}>
             <h3 className="cardTitile">{props.title}</h3>
@@ -43,10 +44,10 @@ return (
 }
 {!isActive &&
     <div className="hoverdis" onClick={handleClickcard} onMouseLeave={handleClickcard} >
-    <Card style={{ width: 320, height: 140 ,border:"2px solid lightblue"}} className="card1">
+    <Card style={{ width: 300, height: 160 ,border:"2px solid lightblue"}} className="card1">
         <Row>
         <Col span={24}>
-        <h3>{props.content}</h3>
+        <h3 className="card2">{props.details}</h3>
         <div className="bright">        
         <Button  className="btn4">View Details</Button>     
         </div>   
