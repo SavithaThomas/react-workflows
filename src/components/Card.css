@@ -1,8 +1,12 @@
 .card1 {
     border-radius: 20px;
   }
+
+  
+
   .ant-card-body {
-    padding: 9px !important;
+     padding: 9px !important; 
+    
   }
   .cardImg {
     margin: 5px 5px;
@@ -28,7 +32,7 @@
     font-weight: 400;
   }
   .gutter-box {
-    padding: 8px 0;
+    padding: 0px 0;
     background: #00a0e9;
   }
   .card2 {
@@ -90,4 +94,63 @@ padding: 15px;
     /* margin-top:100px;  */
 
  }
+
+ .ant-modal-content {
+  /* max-height: 700px; */
+  height: 520px ;
+  width: 630px ;
+}
+
+.text3 {
+  height: 150px;
+  border: none;
+  border-bottom:1px solid  #00a0e9;
+  font: 'Montserrat' ;
+  font-weight: 400; 
+  font-size: 15px; 
+  width: "100%";
+   resize: "none";
+   
+  /* display: inline;
+  overflow: auto; */
+  /* border: none; */
+}
+
+.text2 {
+  border: none;  
+  border-bottom : 1px solid  #00a0e9;
+  font: 'Montserrat' ;
+   font-weight: 700; 
+  font-size: 18px; 
+
+}
+
+/* .popupfoot1 {
+  margin-top: 50px ! important; 
+float: right!important; 
+  width:100px;
+}
+.savebt1
+ {
+  
+  width: 150px;
+height: 40px;
+background: #2B78D4;
+border-radius: 8px;
+  margin-top: 55px ! important; 
+ /* float: right!important;  */
+   /* margin-left: 250px !important; 
+   margin-right: 20px;
  
+}
+.cancelbt1 {
+  width:150px;
+  height:40px;
+   margin-top: 55px ! important; 
+  border: 1px solid #2B78D4;
+border-radius: 8px;
+   color:#00a0e9;
+
+} */
+
+  

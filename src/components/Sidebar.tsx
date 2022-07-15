@@ -23,6 +23,7 @@ import img7 from "../shapes/img7.svg";
 import img8 from "../shapes/img8.png";
 import img9 from "../shapes/img9.svg";
 import img10 from "../shapes/img10.png";
+import { isNullOrUndefined } from "util";
 
 
 //const style: React.CSSProperties = { background: "#0092ff", padding: "8px 0" };
@@ -32,7 +33,24 @@ const { Header, Content, Sider } = Layout;
 function Sidebar() {
   const [isModal, setIsModalVisible] = useState(false);
   // const [isMouse, setIsMouse] = useState(false);
- 
+  
+  const [name, setName] = useState('');
+   const [desig, setDesig] = useState('');
+
+   const handle = () => {
+      localStorage.setItem('Name', name);
+      localStorage.setItem('Designation', desig);
+      setIsModalVisible(false);   
+      console.log(name);
+
+      let empdetails =[{
+        empname:name,
+        designation:desig,
+       
+      }]
+      console.log(empdetails);
+   };
+  
   const showModal = () => {  
     setIsModalVisible(true);   
     };
@@ -140,8 +158,9 @@ function Sidebar() {
           marginLeft: '50px ',padding:'10px',        
         }}>
                 <Button className="btn3"  type="primary" onClick={showModal}>Create Workflow</Button>
-                <Modal title="Setup Employee"  centered visible={isModal} okType  ="default"  onOk={handleOk}  onCancel={handleCancel} okText="Cancel" cancelText="Save" >
+                <Modal title="Setup Employee"  centered visible={isModal} footer={null}  >
                 <Row>
+                
                 <Col span={6}>
                 <Upload
                                 name="avatar"
@@ -155,61 +174,39 @@ function Sidebar() {
                                 {imageUrl ? <img src={imageUrl} alt="avatar" style={{ width: '100%' }} /> : uploadButton}
                             </Upload>           
               </Col>
-              <Col span={8}>
-              
-                <p>Employee Name</p>
-                                
-                <p>Designation </p>
-                                
-                <p>Employee Details</p>
-
+              <Col span={8}>              
+                <p className="popup">Employee Name</p>                                
+                <p className="popup">Designation </p>                                
+                <p className="popup">Employee Details</p>
                 </Col>
-                <Col span={10}>             
+                <Col span={10}>                   
+                <Input className="text" id ="test1" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)}/>                    
+                <Input className="text" id="test2" placeholder="Designation" value={desig} onChange={(e) => setDesig(e.target.value)} />
+                <textarea rows={4} cols={30} className="text1"   value="This space is for adding details of employee and other things you like to . Utilize the space and put something informative. I hope this will help you to understand more about the employee." />
                 
-                <Input className="text" id ="test1" value= "Krushi. M"/>               
-                
-                <Input className="text" value="SDE 1" id="test2" />
-              <textarea rows={4} cols={30} className="text1"   value="This space is for adding details of employee and other things you like to . Utilize the space and put something informative. I hope this will help you to understand more about the employee." />
-                
-
-                </Col>
-
-              {/* <textarea rows={4} cols={30}  className="text1"   value="This space is for adding details of employee and other things you like to . Utilize the space and put something informative. I hope this will help you to understand more about the employee." /> */}
-                
-               
-                {/* <Form>
-                <Form.Item label="Employee Name">
-                <Input className="text" value= "Krushi. M"/>
-                </Form.Item>
-                <Form.Item label="Designation   :">
-                <Input className="text" value="SDE 1" />
-                </Form.Item>
-                <Form.Item label="Employee Details">
-              <textarea rows={4} cols={30}  className="text1"   value="This space is for adding details of employee and other things you like to . Utilize the space and put something informative. I hope this will help you to understand more about the employee." />
-                </Form.Item>
-                </Form> */}
-              {/* <input name="Employee Name"></input>
-        <p>Some contents...</p>
-        <p>Some contents...</p> */}
-      
-        </Row>
-        
+                </Col>     
+        </Row> 
+        <Row className="popupfoot">
+        <Button type="primary"className="savebt" onClick={handle}>Save</Button>
+        <Button className="cancelbt" onClick={handleCancel}>Cancel</Button>
+          </Row>       
       </Modal>
               </Col>             
             </Row>           
           </Header>
           <Content
         style={{
-          marginTop: '40px',padding:'30px', 
+          marginTop: '40px',padding:'20px', 
         }}
       >
         <div
           className="site-layout-background"
           style={{
             padding: '10px',
-            margin: '10px',
+            // margin: '10px',
             minHeight:'1000 px',
-            marginTop:"-25px" 
+            marginTop:"-25px" ,
+            marginRight:'0px',
             
           }}
         >
