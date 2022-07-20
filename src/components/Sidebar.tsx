@@ -24,11 +24,14 @@ import img8 from "../shapes/img8.png";
 import img9 from "../shapes/img9.svg";
 import img10 from "../shapes/img10.png";
 import { isNullOrUndefined } from "util";
+import data from "./data";
+
 
 
 //const style: React.CSSProperties = { background: "#0092ff", padding: "8px 0" };
 const { Search } = Input;
 const { Header, Content, Sider } = Layout;
+const { TextArea } = Input;
 
 function Sidebar() {
   const [isModal, setIsModalVisible] = useState(false);
@@ -36,29 +39,46 @@ function Sidebar() {
   
   const [name, setName] = useState('');
    const [desig, setDesig] = useState('');
+   const [details,setDetails]=useState('');
+   const [img,setImage]=useState('');
 
    const handle = () => {
-      localStorage.setItem('Name', name);
-      localStorage.setItem('Designation', desig);
-      setIsModalVisible(false);   
-      console.log(name);
 
-      let empdetails =[{
-        empname:name,
-        designation:desig,
-       
-      }]
-      console.log(empdetails);
-   };
+    let empdetails= JSON.parse(`${localStorage.getItem('empdetails') || '[]'}`);
+    const empdata=Object.values(empdetails);    
+
+    let payload: any ={
+      id:empdata.length,
+      name:name,
+      designation:desig,
+      det: details
+    }
+    let datain: any ={
+      e_id:data.length,
+      image:img,
+      title:name,
+      description:desig,
+      content: details,
+      details: "This workflow is to enable an empoyee raise his leave request and get it approved it from his reporting manager."
+    }
+    
+    data.push(datain);
   
+  
+    empdetails.push(payload);
+    localStorage.setItem('empdetails', JSON.stringify(empdetails));     
+    setIsModalVisible(false);  
+
+   };
+   
   const showModal = () => {  
     setIsModalVisible(true);   
     };
 
-    const handleOk = () => {  
-      setIsModalVisible(false);   
-      console.log("HEllo");
-      // console.log(document.getElementById('test1').Value)
+    const handle2 = () => {  
+      let empdetails= JSON.parse(`${localStorage.getItem('empdetails') || '[]'}`);
+
+    
       };
       const handleCancel = () => {  
         setIsModalVisible(false);   
@@ -88,6 +108,7 @@ function Sidebar() {
   const handleChange: UploadProps['onChange'] = (info: UploadChangeParam<UploadFile>) => {
     if (info.file.status === 'uploading') {
       setLoading(true);
+      
       return;
     }
     if (info.file.status === 'done') {
@@ -158,7 +179,7 @@ function Sidebar() {
           marginLeft: '50px ',padding:'10px',        
         }}>
                 <Button className="btn3"  type="primary" onClick={showModal}>Create Workflow</Button>
-                <Modal title="Setup Employee"  centered visible={isModal} footer={null}  >
+                <Modal  title="Setup Employee"  centered visible={isModal} footer={null}  >
                 <Row>
                 
                 <Col span={6}>
@@ -170,6 +191,7 @@ function Sidebar() {
                                 action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
                                 beforeUpload={beforeUpload}
                                 onChange={handleChange}
+                                // (e:any) => setImage(e.target.file)
                                 >
                                 {imageUrl ? <img src={imageUrl} alt="avatar" style={{ width: '100%' }} /> : uploadButton}
                             </Upload>           
@@ -180,9 +202,18 @@ function Sidebar() {
                 <p className="popup">Employee Details</p>
                 </Col>
                 <Col span={10}>                   
-                <Input className="text" id ="test1" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)}/>                    
-                <Input className="text" id="test2" placeholder="Designation" value={desig} onChange={(e) => setDesig(e.target.value)} />
-                <textarea rows={4} cols={30} className="text1"   value="This space is for adding details of employee and other things you like to . Utilize the space and put something informative. I hope this will help you to understand more about the employee." />
+                <Input className="text" id ="test1"  value={name} onChange={(e:any) => setName(e.target.value)}/>                    
+                <Input className="text" id="test2"  value={desig} onChange={(e:any) => setDesig(e.target.value)} />
+                <TextArea className="text1"
+                                // value={value}
+                                //  onChange={e => setValue(e.target.value)}
+                                placeholder="Employee Details"
+                                autoSize={{ minRows: 3, maxRows: 5 }}                                
+                                onChange={(e:any)=>setDetails(e.target.value)} 
+                                value={details}
+                                
+                            />
+                {/* <textarea rows={4} cols={30} className="text1"   value="This space is for adding details of employee and other things you like to . Utilize the space and put something informative. I hope this will help you to understand more about the employee." /> */}
                 
                 </Col>     
         </Row> 

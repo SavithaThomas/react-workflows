@@ -8,6 +8,13 @@
      padding: 9px !important; 
     
   }
+  .site-card-border-less-wrapper{
+    display: block;
+  }
+  .hoverdis {
+    display: none;
+  }
+
   .cardImg {
     margin: 5px 5px;
     width: 40px;
@@ -80,6 +87,10 @@ padding: 15px;
    
 
  }
+   .viewmodel {
+  height: 500px !important;
+
+ }
  .bright {
     /* position: absolute; */ 
    
@@ -97,8 +108,8 @@ padding: 15px;
 
  .ant-modal-content {
   /* max-height: 700px; */
-  height: 520px ;
-  width: 630px ;
+  /* height: 520px ;
+  width: 630px ; */
 }
 
 .text3 {
@@ -125,11 +136,13 @@ padding: 15px;
 
 }
 
-/* .popupfoot1 {
-  margin-top: 50px ! important; 
-float: right!important; 
-  width:100px;
-}
+ /* .popupfoot{
+ 
+  /* position: relative;
+  left: -6.6rem;
+  top: -4.3rem; 
+} */
+/*
 .savebt1
  {
   

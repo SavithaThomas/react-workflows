@@ -5,29 +5,55 @@ import { useState } from 'react';
 import { Layout,Menu} from "antd";
 import { Input, Button} from "antd";
 import { Modal } from "antd";
+import data from "./data";
 
 
 import img2 from "../shapes/img2.svg";
+import { isTemplateSpan } from 'typescript';
 // import { AnyPtrRecord } from 'dns';
 const { Content } = Layout;
+const { TextArea } = Input;
+
 
 function Cardcomp(props:any) {
 
   const [isActive, setIsActive] = useState(true);
   // const [isMouse, setIsMouse] = useState(false);
- 
+  const [name, setName] = useState('');
+   const [desig, setDesig] = useState('');
+   const [details,setDetails]=useState('');
+
+   
   const handleClickcard = () => {  
     setIsActive(isActive => !isActive);   
     };
 
     const [isModal, setIsModalVisible] = useState(false);
-  // const [isMouse, setIsMouse] = useState(false);
+   
+   const handleEdit = () => {
+
+    console.log('props',props?.title)
   
-  
-   const handle = () => {
-     
-      setIsModalVisible(false);   
-         };
+    let empdetails= JSON.parse(`${(localStorage.getItem('empdetails')) || '[]'}`);
+    const empd=Object.values(empdetails); 
+   
+    const result:any =empd.find((item:any) => item.name == props?.title);
+    console.log('result',result);
+    const id:any=result.id;
+    let x:any =localStorage.key(id);
+    localStorage.removeItem(x);
+    empdetails= JSON.parse(`${(localStorage.getItem('empdetails')) || '[]'}`);
+    
+    let payload: any ={
+      id:result.id,
+      name:result.name,
+      designation:desig,
+      det: details
+    }    
+     empdetails.push(payload);
+     localStorage.setItem('empdetails', JSON.stringify(empdetails));     
+    setIsModalVisible(false);        
+   };     
   
   const showModal = () => {  
     setIsModalVisible(true);   
@@ -35,7 +61,7 @@ function Cardcomp(props:any) {
 
     const handleOk = () => {  
       setIsModalVisible(false);   
-      console.log("HEllo");
+      
       // console.log(document.getElementById('test1').Value)
       };
       const handleCancel = () => {  
@@ -47,9 +73,9 @@ return (
 <Content style={{ margin: "24px 16px 0" }}>
 <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
   <Col className="gutter-row" span={6}>
-  {isActive && 
-    <div className="site-card-border-less-wrapper" onMouseEnter={handleClickcard}  onClick={handleClickcard} >
-      <Card style={{ width: 300, height: 160 }} className="card1">
+  <Card style={{ width: 300, height: 160 }} className="card1">
+    <div className={isActive?"site-card-border-less-wrapper":"hoverdis"} onMouseEnter={handleClickcard}  onClick={handleClickcard} >
+      
         <Row>
           <Col span={6}>
             <img src={img2} className="cardImg" alt=" " />
@@ -61,19 +87,15 @@ return (
               {props.content}
             </p>
           </Col>
-        </Row>        
-      </Card>
-    </div>
-}
-{!isActive &&
-    <div className="hoverdis" onClick={handleClickcard} onMouseLeave={handleClickcard} >
-    <Card style={{ width: 300, height: 160 ,border:"2px solid lightblue"}} className="card1">
+        </Row>          
+      </div>
+    <div className={isActive?"hoverdis":"site-card-border-less-wrapper"} onMouseLeave={handleClickcard}  onClick={handleClickcard}>
         <Row>
         <Col span={24}>
         <h3 className="card2">{props.details}</h3>
         <div className="bright">        
         <Button  className="btn4" onClick={showModal}>View Details</Button>     
-        <Modal title="Setup Employee"   className='viewmodel' centered visible={isModal} footer={null}  >
+        <Modal   className='viewmodel' centered visible={isModal} footer={null}>
                 <Row>
                 <Col span={6}>     
                 <img src={img2} className="cardImg" alt=" " />                
@@ -87,24 +109,34 @@ return (
             </Col>
             <Col span={6}>     
                
-              </Col>
-            <Col span={8}>              
-                <p>Employee Name           
-                </p>                              
-                <p>Designation </p>                                
-                <p>Employee Details</p>
+              </Col>              
+              
+
+                <Col span={8}>              
+                <p className="popup">Employee Name</p>                                
+                <p className="popup">Designation </p>                                
+                <p className="popup">Employee Details</p>
                 </Col>
                 <Col span={10}>                   
-                <Input className="text2" id ="test1" placeholder="Name" />                   
-                <Input className="text2" id="test2" placeholder="Designation"  />
-                <textarea rows={4} cols={30} className="text3"   value="This space is for adding details of employee and other things you like to . Utilize the space and put something informative. I hope this will help you to understand more about the employee." />
+                <Input className="text" id ="test1"  placeholder={props.title} onChange={(e:any) => setName(e.target.value)}/>                    
+                <Input className="text" id="test2"  placeholder={props.description} onChange={(e:any) => setDesig(e.target.value)} />
+                <TextArea className="text1"
+                                // value={value}
+                                //  onChange={e => setValue(e.target.value)}
+                                placeholder={props.content}
+                                autoSize={{ minRows: 3, maxRows: 5 }}
+                                
+                                onChange={(e:any)=>setDetails(e.target.value)} 
+                            />
+               
                 
-                </Col>   
-          
-             
-        </Row> 
+                </Col>       
+                 
+
+
+           </Row> 
         <Row className="popupfoot">
-        <Button type="primary"className="savebt" onClick={handle}>Save</Button>
+        <Button type="primary"className="savebt" onClick={handleEdit} >Edit</Button>
         <Button className="cancelbt" onClick={handleCancel}>Cancel</Button>
           </Row>       
         
@@ -112,9 +144,10 @@ return (
         </div>   
       </Col>
       </Row>
-    </Card>
+    
     </div>
-}
+    </Card>
+
     </Col>
     </Row>
    

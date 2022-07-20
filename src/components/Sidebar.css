@@ -158,18 +158,24 @@ border-radius: 8px;
    padding-right:50px;    
     align-items: center;  
 }
-
+.inputText, .inputText:focus{
+  color: #002F68;
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  line-height: 25px;
+}
 
 .ant-modal-content {
   /* max-height: 700px; */
-  height: 400px;
-  width: 630px;
+   /* height: 320px; */
+  /* width: 630px; */ 
 }
 .popup {
-  margin-top: 30px;
+   /* margin-top: 30px;  */
 }
 .text1 {
-  height: 150px;
+  height: 75px;
   border: none;
   border-bottom:1px solid  #00a0e9;
   font: 'Montserrat' ;
@@ -177,7 +183,11 @@ border-radius: 8px;
   font-size: 15px; 
   width: "100%";
    resize: "none";
-   margin-top: 20px;
+   /* margin-top: 20px; */
+   color: #002F68;
+  font-weight: 400;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
   /* display: inline;
   overflow: auto; */
   /* border: none; */
@@ -189,45 +199,94 @@ border-radius: 8px;
   font: 'Montserrat' ;
    font-weight: 700; 
   font-size: 18px; 
- margin-top: 20px;
+ /* margin-top: 20px; */
 }
 .avatar-uploader {
-  margin-top: 20px;
+  /* margin-top: 20px; */
 }
-
+.ant-modal-header{
+  border-radius: 24px 24px 0 0;
+  border-bottom: none;
+}
+.ant-modal-content{
+  border-radius: 24px !important;
+}
+.ant-modal-title{
+  color: #A7B0C3 !important;
+}
+.ant-upload.ant-upload-select-picture-card {
+  border-radius: 12px !important;
+  width: 100px !important;
+  height: 110px !important;
+  background-color: #D1DCF4;
+}
  /* .ant-btn-default {
   width:100px;
    /* background-color: #1890ff;  */
   /* color:#00a0e9;
-
 } */ */
 
 .popupfoot {
-  margin-top: 50px ! important;
+  margin-top: 70px ! important;
   float: right!important;
   width:100px;
 }
 .savebt
  {
-  
-  width: 150px;
-height: 40px;
+  float: right;
+  border-radius: 10px;
+  width: 25%;
+  height: 35px !important;
+  margin: 30px 0px 0 220px !important;
+  background-color: #2B78D4;
+  /* margin-top: 20px; */
+  /* width: 100px;
+height: 35px;
 background: #2B78D4;
 border-radius: 8px;
   margin-top: 55px ! important;
   /* float: right!important; */
-   margin-left: 250px !important; 
-   margin-right: 20px;;
+   /* margin-left: 250px !important;  */
+   /* margin-right: 20px;; */ 
  
 }
 .cancelbt {
-  width:150px;
-  height:40px;
+  border-radius: 10px;
+  width: 25%;
+  height: 35px !important;
+  font-weight: 500;
+  margin: 30px 0px 0 10px !important;
+  border-style: solid;
+  border-color: #2B78D4;
+  border-width: 1px;
+  color: #2B78D4;
+  margin-top: 20px;
+  /* width:100px;
+  height:35px;
   margin-top: 55px ! important;
   border: 1px solid #2B78D4;
 border-radius: 8px;
-   color:#00a0e9;
+   color:#00a0e9; */
 
+}
+
+.inputTextarea{
+  
+}
+.modalfield{
+  width: 500px !important;
+}
+.modalfield .ant-modal-close-x {
+  /* margin: 30px 28px; */
+}
+.modalfield .cardTitile{
+  /* margin-top: 5px; */
+}
+.modalfield .rowfield{
+  /* margin-top: 25px !important; */
+}
+.modalfield .ant-input:placeholder-shown{
+  width: 230px;
 }
 
 /* .container1 {
@@ -238,5 +297,4 @@ border-radius: 8px;
    padding-right:50px;    
     align-items: center;  
 }
-
  */
