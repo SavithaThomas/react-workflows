@@ -2,25 +2,53 @@
 import Cardcomp from "../components/Cardcomp";
 import { Col, Row } from 'antd';
 import data from "./data";
+import { useState,useEffect } from 'react';
 
+const initialValue=[{id:0,name:"Anoosha",desig:"SDE1"}];
+  // const [cards,setCards]=useState([]);
+
+
+// const Cont = () => {
+
+
+
+function Cont()
+ {
+  const initialValue=[{key:0,title:"Anoosha",description:"SDE1"}];
+  const [cards,setCards]=useState([]);
+  
+  const [loading,setLoading]=useState(false);
+  let empdetails= JSON.parse(`${localStorage.getItem('empdetails') || '[]'}`);
+       
+ 
+
+  useEffect(() => {
+    let empdetails= JSON.parse(`${(localStorage.getItem('empdetails')) || '[]'}`);
+    setCards(empdetails);
+    setLoading(false);            
+  }, [loading]); 
+
+  const refresh = ()=>{
+    setLoading(true);  
+  }
+  
 function createCard(emp:any)
 {
   return <Cardcomp
-  key={emp.e_id}
+  key={emp.id}
   image={emp.image}
-  title={emp.title} 
-  description={emp.description} 
-  content={emp.content} 
-  details={emp.details}
+  title={emp.name} 
+  description={emp.designation} 
+  content={emp.det} 
+  details={emp.det}
+  refresh={refresh}
   />
 }
-
-function Cont()
-{
+  
     return(
     <div className='cardcompo'>
     <Row>        
-        {data.map(createCard)}         
+        {cards.map((item)=>createCard(item))}         
     </Row>
       </div>)
 }

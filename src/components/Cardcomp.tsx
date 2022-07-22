@@ -1,7 +1,7 @@
 import { Card,Avatar } from 'antd';
 import './Card.css';
 import { Col, Row } from "antd";
-import { useState } from 'react';
+import { useState , useEffect } from 'react';
 import { Layout,Menu} from "antd";
 import { Input, Button} from "antd";
 import { Modal } from "antd";
@@ -19,7 +19,7 @@ function Cardcomp(props:any) {
 
   const [isActive, setIsActive] = useState(true);
   // const [isMouse, setIsMouse] = useState(false);
-  const [name, setName] = useState('');
+  const [name, setName] = useState(props.title);
    const [desig, setDesig] = useState('');
    const [details,setDetails]=useState('');
 
@@ -28,31 +28,38 @@ function Cardcomp(props:any) {
     setIsActive(isActive => !isActive);   
     };
 
-    const [isModal, setIsModalVisible] = useState(false);
-   
+   const [isModal, setIsModalVisible] = useState(false);   
    const handleEdit = () => {
-
-    console.log('props',props?.title)
-  
-    let empdetails= JSON.parse(`${(localStorage.getItem('empdetails')) || '[]'}`);
-    const empd=Object.values(empdetails); 
-   
-    const result:any =empd.find((item:any) => item.name == props?.title);
-    console.log('result',result);
-    const id:any=result.id;
-    let x:any =localStorage.key(id);
-    localStorage.removeItem(x);
-    empdetails= JSON.parse(`${(localStorage.getItem('empdetails')) || '[]'}`);
     
-    let payload: any ={
-      id:result.id,
-      name:result.name,
-      designation:desig,
-      det: details
-    }    
-     empdetails.push(payload);
-     localStorage.setItem('empdetails', JSON.stringify(empdetails));     
-    setIsModalVisible(false);        
+    console.log('props',props?.title);     
+    let empdetails= JSON.parse(`${(localStorage.getItem('empdetails')) || '[]'}`);    
+      for(const item of empdetails) {
+      if (item.name==props.title) {        
+      item.designation=desig;
+      item.det=details;
+    }
+    }
+       
+    // const result:any =empd.find((item:any) => item.name == props?.title);
+    // console.log('result',result);
+    // const id:any=result.id;
+    
+    // let x:any =localStorage.key(id);
+    // localStorage.removeItem(x);
+    // empdetails= JSON.parse(`${(localStorage.getItem('empdetails')) || '[]'}`);
+    // console.log(empdetails);
+    // let payload: any ={
+    //   id:result.id,
+    //   name:result.name,
+    //   designation:desig,
+    //   det: details
+    // }    
+    //  empdetails.push(payload);
+    localStorage.setItem('empdetails', JSON.stringify(empdetails));   
+    
+    setIsModalVisible(false); 
+     props.refresh();       
+    //setLoading(true);
    };     
   
   const showModal = () => {  
@@ -123,7 +130,7 @@ return (
                 <TextArea className="text1"
                                 // value={value}
                                 //  onChange={e => setValue(e.target.value)}
-                                placeholder={props.content}
+                                placeholder={props.details}
                                 autoSize={{ minRows: 3, maxRows: 5 }}
                                 
                                 onChange={(e:any)=>setDetails(e.target.value)} 

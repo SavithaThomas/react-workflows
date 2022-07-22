@@ -25,6 +25,8 @@ import img9 from "../shapes/img9.svg";
 import img10 from "../shapes/img10.png";
 import { isNullOrUndefined } from "util";
 import data from "./data";
+import refresh from "../components/Cardcreate"
+import cards from "./Cardcreate"
 
 
 
@@ -41,6 +43,8 @@ function Sidebar() {
    const [desig, setDesig] = useState('');
    const [details,setDetails]=useState('');
    const [img,setImage]=useState('');
+   
+
 
    const handle = () => {
 
@@ -61,12 +65,12 @@ function Sidebar() {
       content: details,
       details: "This workflow is to enable an empoyee raise his leave request and get it approved it from his reporting manager."
     }
-    
-    data.push(datain);
+      
   
-  
+    //data.push(datain);
     empdetails.push(payload);
-    localStorage.setItem('empdetails', JSON.stringify(empdetails));     
+    localStorage.setItem('empdetails', JSON.stringify(empdetails));  
+    //  refresh();  
     setIsModalVisible(false);  
 
    };
